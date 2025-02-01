@@ -18,7 +18,7 @@ ARCHITECTURE Behavioral OF toplevel IS
       pulseout : OUT STD_LOGIC);
   END COMPONENT;
 BEGIN
-  rstn <= reset_pb;
+  rstn <= NOT reset_pb;
   make2Hz : clkdivider GENERIC MAP(divideby => 62500000)
   PORT MAP(clk => sysclk, resetn => rstn, pulseout => ena_2hz);
   -- just a silly counter for demo purposes
